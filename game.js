@@ -18,12 +18,4 @@ function playRound(playerSelection, computerSelection) {
   return `You win! ${playerSelection} beats ${computerSelection}`;
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    playerSelection = prompt("Choose your weapon: rock / paper / scissors:");
-    let result = playRound(playerSelection, getComputerChoice());
-    console.log(result);
-  }
-}
-
-game();
+export { playRound, getComputerChoice };
