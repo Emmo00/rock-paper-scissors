@@ -4,16 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <div class="weapons">
-      <button class="rock">Rock</button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
+    <div class="game">
+      <h2>Choose Your weapon</h2>
+      <br />
+      <br />
+      <div class="weapons">
+        <button class="rock btn">Rock</button>
+        <button class="paper btn">Paper</button>
+        <button class="scissors btn">Scissors</button>
+      </div>
+      <div class="score-board">
+        <span class="player-score">0</span> -
+        <span class="computer-score">0</span>
+      </div>
+      <div class="result"></div>
     </div>
-    <div class="score-board">0-0</div>
-    <div class="result"></div>
+    <footer>
+      <div><p>Copyright &copy; Emmanuel 2023</p></div>
+    </footer>
   </body>
   <script src="game.js" type="module"></script>
   <script src="script.js" type="module"></script>

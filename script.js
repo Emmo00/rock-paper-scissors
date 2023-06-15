@@ -5,14 +5,16 @@ let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
 
 let resultElement = document.querySelector(".result");
-let scoreBoard = document.querySelector(".score-board");
-function someoneWon(scores) {
-  if (scores[0] == 5) {
+let playerScoreContainer = document.querySelector(".player-score");
+let computerScoreContainer = document.querySelector(".computer-score");
+
+function someoneWon({ player, computer }) {
+  if (player == 5) {
     // player won
     resultElement.textContent = "player won";
     return true;
   }
-  if (scores[1] == 5) {
+  if (computer == 5) {
     // computer won
     resultElement.textContent = "computer won";
     return true;
@@ -20,24 +22,29 @@ function someoneWon(scores) {
   return false;
 }
 
-function updateScore(result) {
-  let score = scoreBoard.textContent;
-  score = score.split("-");
-  if (result.split(" ").includes("win!")) {
-    score[0] = `${parseInt(score[0]) + 1}`;
-  } else if (result.split(" ").includes("lose!")) {
-    score[1] = `${parseInt(score[1]) + 1}`;
+function updateScore({ winner }) {
+  let playerScore = parseInt(playerScoreContainer.textContent);
+  let computerScore = parseInt(computerScoreContainer.textContent);
+  if (winner === "player") {
+    playerScore++;
+    playerScoreContainer.textContent = playerScore;
+  } else if (winner === "computer") {
+    computerScore++;
+    computerScoreContainer.textContent = computerScore;
   }
-  if (someoneWon(score)) {
-    scoreBoard.textContent = "0-0";
-    return;
+  let scoreObject = {
+    player: playerScore,
+    computer: computerScore,
+  };
+  if (someoneWon(scoreObject)) {
+    playerScoreContainer.textContent = "0";
+    computerScoreContainer.textContent = "0";
   }
-  scoreBoard.textContent = score.join("-");
 }
 
 function playGame(userChoice) {
   let result = playRound(userChoice, getComputerChoice());
-  resultElement.textContent = result;
+  resultElement.textContent = result.message;
   updateScore(result);
 }
 

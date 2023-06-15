@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  overflow: hidden;
+}
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(9, 9, 77),
+    rgb(1, 36, 1)
+  );
+  color: white;
+  font-family: fantasy;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.weapons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  font-size: 200%;
+  font-family: cursive;
+}
+
+.rock {
+  border: 8px solid rgb(250, 19, 2);
+}
+.paper {
+  border: 8px solid rgb(55, 10, 179);
+}
+.scissors {
+  border: 8px solid rgb(250, 246, 2);
+}
+
+.score-board {
+  padding: 30px;
+  margin: 30px;
+  font-size: 200%;
+  border: 2px solid white;
+  border-radius: 9px;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer {
+  position: fixed;
+  color: white;
+  bottom: 0;
+  font-family: monospace;
+  width: 100%;
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
